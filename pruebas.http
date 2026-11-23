@@ -1,0 +1,261 @@
+
+### Obtener todos los usuarios
+GET http://localhost:3000/api/usuarios
+
+
+### Registrar un usuario nuevo
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "Nombre": "Usuario Prueba API",
+    "Email": "prueba.api2026@email.com",
+    "Pais": "Peru",
+    "FechaRegistro": "2026-11-22",
+    "Estado": "Activo"
+}
+
+
+
+### Actualizar usuario
+PUT http://localhost:3000/api/usuarios/12
+Content-Type: application/json
+
+{
+    "Nombre": "Usuario Prueba Actualizado",
+    "Email": "prueba.actualizada@email.com",
+    "Pais": "Peru",
+    "FechaRegistro": "2026-11-22",
+    "Estado": "Activo"
+}
+
+
+
+### Eliminar usuario de prueba
+DELETE http://localhost:3000/api/usuarios/12
+
+
+
+### Verificar que el usuario fue eliminado
+GET http://localhost:3000/api/usuarios/12
+
+
+
+### Registrar un plan nuevo
+POST http://localhost:3000/api/planes
+Content-Type: application/json
+
+{
+    "NombrePlan": "Plan Prueba API",
+    "Precio": 15,
+    "CantidadPantallas": 1
+}
+
+
+
+### Actualizar plan
+PUT http://localhost:3000/api/planes/4
+Content-Type: application/json
+
+{
+    "NombrePlan": "Plan Prueba Actualizado",
+    "Precio": 25,
+    "CantidadPantallas": 2
+}
+
+
+
+### Eliminar plan de prueba
+DELETE http://localhost:3000/api/planes/4
+
+
+
+### Registrar contenido nuevo
+POST http://localhost:3000/api/contenidos
+Content-Type: application/json
+
+{
+    "Titulo": "Contenido Prueba API",
+    "Tipo": "Pelicula",
+    "Categoria": "Accion",
+    "Anio": 2026,
+    "DuracionMin": 90,
+    "Disponible": true
+}
+
+
+
+### Actualizar contenido
+PUT http://localhost:3000/api/contenidos/11
+Content-Type: application/json
+
+{
+    "Titulo": "Contenido Prueba Actualizado",
+    "Tipo": "Serie",
+    "Categoria": "Drama",
+    "Anio": 2025,
+    "DuracionMin": 120,
+    "Disponible": true
+}
+
+
+
+### Eliminar contenido de prueba
+DELETE http://localhost:3000/api/contenidos/11
+
+
+
+### Registrar suscripcion nueva
+POST http://localhost:3000/api/suscripciones
+Content-Type: application/json
+
+{
+    "UsuarioID": 1,
+    "PlanID": 1,
+    "FechaInicio": "2026-11-22",
+    "FechaFin": null,
+    "Activo": true
+}
+
+
+
+### Actualizar suscripcion
+PUT http://localhost:3000/api/suscripciones/12
+Content-Type: application/json
+
+{
+    "UsuarioID": 1,
+    "PlanID": 2,
+    "FechaInicio": "2026-11-22",
+    "FechaFin": "2027-11-22",
+    "Activo": true
+}
+
+
+
+### Eliminar suscripcion de prueba
+DELETE http://localhost:3000/api/suscripciones/12
+
+
+
+### Registrar reproduccion nueva
+POST http://localhost:3000/api/reproducciones
+Content-Type: application/json
+
+{
+    "UsuarioID": 1,
+    "ContenidoID": 1,
+    "FechaReproduccion": "2026-11-22",
+    "MinutosVistos": 30
+}
+
+
+
+### Actualizar reproduccion
+PUT http://localhost:3000/api/reproducciones/13
+Content-Type: application/json
+
+{
+    "UsuarioID": 1,
+    "ContenidoID": 2,
+    "FechaReproduccion": "2026-11-22",
+    "MinutosVistos": 60
+}
+
+
+
+### Eliminar reproduccion de prueba
+DELETE http://localhost:3000/api/reproducciones/13
+
+
+
+### Registrar pago nuevo
+POST http://localhost:3000/api/pagos
+Content-Type: application/json
+
+{
+    "SuscripcionID": 1,
+    "FechaPago": "2026-11-22",
+    "Monto": 25,
+    "MetodoPago": "Tarjeta",
+    "EstadoPago": "Pagado"
+}
+
+
+
+### Actualizar pago
+PUT http://localhost:3000/api/pagos/8
+Content-Type: application/json
+
+{
+    "SuscripcionID": 1,
+    "FechaPago": "2026-11-22",
+    "Monto": 35,
+    "MetodoPago": "Transferencia",
+    "EstadoPago": "Pagado"
+}
+
+
+
+### Eliminar pago de prueba
+DELETE http://localhost:3000/api/pagos/8
+
+
+
+### Buscar usuario por ID
+GET http://localhost:3000/api/usuarios/1
+
+
+
+### Buscar plan por ID
+GET http://localhost:3000/api/planes/1
+
+###
+### Buscar suscripcion por ID
+GET http://localhost:3000/api/suscripciones/1
+
+###
+### Buscar contenido por ID
+GET http://localhost:3000/api/contenidos/1
+
+###
+### Buscar reproduccion por ID
+GET http://localhost:3000/api/reproducciones/1
+
+###
+### Buscar pago por ID
+GET http://localhost:3000/api/pagos/1
+
+
+
+### Buscar usuario inexistente
+GET http://localhost:3000/api/usuarios/99999
+
+
+
+### Probar validacion de usuario
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "Nombre": "Usuario Incompleto",
+    "Email": "usuario.prueba@email.com"
+}
+
+
+
+### Probar error de servidor
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "Nombre": "Usuario Duplicado",
+    "Email": "carlos.mendoza@email.com",
+    "Pais": "Peru",
+    "FechaRegistro": "2026-11-22",
+    "Estado": "Activo"
+}
+
+###
+
+
