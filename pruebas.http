@@ -9,7 +9,7 @@ Content-Type: application/json
 
 {
     "Nombre": "Usuario Prueba API",
-    "Email": "prueba.api2026@email.com",
+    "Email": "prueba.api2026_nuevo@email.com",
     "Pais": "Peru",
     "FechaRegistro": "2026-11-22",
     "Estado": "Activo"
@@ -18,7 +18,7 @@ Content-Type: application/json
 
 
 ### Actualizar usuario
-PUT http://localhost:3000/api/usuarios/12
+PUT http://localhost:3000/api/usuarios/16
 Content-Type: application/json
 
 {
@@ -32,12 +32,12 @@ Content-Type: application/json
 
 
 ### Eliminar usuario de prueba
-DELETE http://localhost:3000/api/usuarios/12
+DELETE http://localhost:3000/api/usuarios/16
 
 
 
 ### Verificar que el usuario fue eliminado
-GET http://localhost:3000/api/usuarios/12
+GET http://localhost:3000/api/usuarios/16
 
 
 
@@ -54,7 +54,7 @@ Content-Type: application/json
 
 
 ### Actualizar plan
-PUT http://localhost:3000/api/planes/4
+PUT http://localhost:3000/api/planes/7
 Content-Type: application/json
 
 {
@@ -66,9 +66,15 @@ Content-Type: application/json
 
 
 ### Eliminar plan de prueba
-DELETE http://localhost:3000/api/planes/4
+DELETE http://localhost:3000/api/planes/7
+
+### Verificar eliminacion del plan
+GET http://localhost:3000/api/planes/7
 
 
+
+### Listar todos los contenidos
+GET http://localhost:3000/api/contenidos
 
 ### Registrar contenido nuevo
 POST http://localhost:3000/api/contenidos
@@ -86,7 +92,7 @@ Content-Type: application/json
 
 
 ### Actualizar contenido
-PUT http://localhost:3000/api/contenidos/11
+PUT http://localhost:3000/api/contenidos/12
 Content-Type: application/json
 
 {
@@ -101,9 +107,15 @@ Content-Type: application/json
 
 
 ### Eliminar contenido de prueba
-DELETE http://localhost:3000/api/contenidos/11
+DELETE http://localhost:3000/api/contenidos/12
 
 
+### Verificar eliminacion de contenido
+GET http://localhost:3000/api/contenidos/12
+
+
+### Listar todas las suscripciones
+GET http://localhost:3000/api/suscripciones
 
 ### Registrar suscripcion nueva
 POST http://localhost:3000/api/suscripciones
@@ -120,23 +132,30 @@ Content-Type: application/json
 
 
 ### Actualizar suscripcion
-PUT http://localhost:3000/api/suscripciones/12
+PUT http://localhost:3000/api/suscripciones/13
 Content-Type: application/json
 
 {
     "UsuarioID": 1,
     "PlanID": 2,
     "FechaInicio": "2026-11-22",
-    "FechaFin": "2027-11-22",
-    "Activo": true
+    "FechaFin": null,
+    "Activo": false
 }
 
 
+### Eliminar suscripcion
+DELETE http://localhost:3000/api/suscripciones/13
 
-### Eliminar suscripcion de prueba
-DELETE http://localhost:3000/api/suscripciones/12
+
+### Verificar eliminacion de suscripcion
+GET http://localhost:3000/api/suscripciones/13
 
 
+
+
+### Listar todas las reproducciones
+GET http://localhost:3000/api/reproducciones
 
 ### Registrar reproduccion nueva
 POST http://localhost:3000/api/reproducciones
@@ -152,7 +171,7 @@ Content-Type: application/json
 
 
 ### Actualizar reproduccion
-PUT http://localhost:3000/api/reproducciones/13
+PUT http://localhost:3000/api/reproducciones/14
 Content-Type: application/json
 
 {
@@ -165,9 +184,17 @@ Content-Type: application/json
 
 
 ### Eliminar reproduccion de prueba
-DELETE http://localhost:3000/api/reproducciones/13
+DELETE http://localhost:3000/api/reproducciones/14
 
 
+### Verificar eliminacion de reproduccion
+GET http://localhost:3000/api/reproducciones/14
+
+
+
+
+### Listar todos los pagos
+GET http://localhost:3000/api/pagos
 
 ### Registrar pago nuevo
 POST http://localhost:3000/api/pagos
@@ -184,7 +211,7 @@ Content-Type: application/json
 
 
 ### Actualizar pago
-PUT http://localhost:3000/api/pagos/8
+PUT http://localhost:3000/api/pagos/9
 Content-Type: application/json
 
 {
@@ -196,9 +223,14 @@ Content-Type: application/json
 }
 
 
-
 ### Eliminar pago de prueba
-DELETE http://localhost:3000/api/pagos/8
+DELETE http://localhost:3000/api/pagos/9
+
+
+### Verificar eliminacion de pago
+GET http://localhost:3000/api/pagos/9
+
+
 
 
 
@@ -257,5 +289,16 @@ Content-Type: application/json
 }
 
 ###
+GET http://localhost:3000/api/usuarios/16
 
 
+### Listar todos los planes
+GET http://localhost:3000/api/planes
+
+
+
+### Validacion - Registrar usuario sin datos
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{}
